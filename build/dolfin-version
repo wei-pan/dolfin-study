@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Helper script to print the version of DOLFIN
+echo 2019.2.0.dev0

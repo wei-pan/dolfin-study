@@ -1,0 +1,17 @@
+# pkg-config configuration for DOLFIN
+prefix=/usr/local
+exec_prefix=/usr/local
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+compiler=/usr/bin/c++
+definitions= -DNDEBUG -DHAS_PETSC -DHAS_SCOTCH -DHAS_PARMETIS -DHAS_ZLIB -DHAS_MPI -DDOLFIN_VERSION="2019.2.0.dev0"
+extlibs=
+boost_includedir=BOOST_INCLUDE_DIR-NOTFOUND
+
+Name: DOLFIN
+Description: Dynamic Object-oriented Library for FINite element computation
+Version: 2019.2.0.dev0
+Requires: 
+Conflicts:
+Libs: -L/home/wpan/DATA/mpich/lib -lmpi -lmpicxx -L/home/wpan/DATA/petsc/arch-linux-c-debug/lib -lpetsc -L/usr/local/lib -lboost_timer  -L${libdir} -ldolfin
+Cflags:  -DDOLFIN_VERSION=\"2019.2.0.dev0\" ${definitions} -I${includedir} -I/home/wpan/DATA/petsc/include -I/home/wpan/DATA/petsc/arch-linux-c-debug/include -I/usr/local/include -I/home/wpan/DATA/mpich/include -I/home/wpan/DATA/firedrake/src/petsc/default/include/eigen3 -I/home/wpan/.local/lib/python3.6/site-packages/ffc/backends/ufc 
